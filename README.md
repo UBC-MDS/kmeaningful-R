@@ -97,8 +97,7 @@ labels <- assign(X_scaled,centers)
 
 ## Documentation
 
-The official documentation is hosted on Read the Docs:
-<https://kmeaningfulR.readthedocs.io/en/latest/>
+The official documentation is hosted here: https://ubc-mds.github.io/kmeaningfulR/
 
 ## Contributors
 
