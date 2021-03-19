@@ -1,0 +1,63 @@
+---
+title: "Tour of kmeaningfulR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{kmeaningfulR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Load `kmeaningfulR` library
+```{r setup}
+library(kmeaningfulR)
+```
+
+## Example array with 6 rows and 2 columns
+```{r example}
+X  <- array(c(0, 1, 10, 10, 10, 10, 0, 1, 10, 11, 0, 1), dim = c(6,2))
+```
+
+```{r example_result}
+X
+```
+
+## Scale data
+```{r preprocess}
+X_scaled <- preprocess(X)
+```
+
+```{r preprocess_result}
+X_scaled
+```
+
+## Find optimal number of clusters
+```{r find_elbow}
+optimal_K <- find_elbow(X_scaled)
+```
+
+```{r find_elbow_result}
+optimal_K
+```
+
+## Find cluster centers and label of nearest center to every point
+```{r fit_assign}
+assign_list <- fit_assign(X_scaled, optimal_K)
+centers <- assign_list[[1]]
+labels <- assign_list[[2]]
+```
+
+```{r fit_assign_result}
+assign_list
+```
+
+## Plot a 2D PCA visualisation of the points clusters
+```{r show_clusters}
+show_clusters(X_scaled, labels, centers)
+```
