@@ -82,10 +82,10 @@ centers <- fit(X_scaled, optimal_K)
 labels <- assign(X_scaled,centers)
 
 # plot a 2D PCA visualisation of the points clusters
-show_clusters(X_scaled, labels, centers)
+# show_clusters(X_scaled, labels, centers)
 ```
 
-![](sample_plot.png)
+![](https://ubc-mds.github.io/kmeaningfulR/articles/kmeaningfulR_files/figure-html/unnamed-chunk-2-1.png)
 
 | Task                               | Function                    |
 | ---------------------------------- | --------------------------- |
@@ -97,7 +97,8 @@ show_clusters(X_scaled, labels, centers)
 
 ## Documentation
 
-The official documentation is hosted on https://ubc-mds.github.io/kmeaningfulR/
+The official documentation is hosted on Read the Docs:
+<https://kmeaningfulR.readthedocs.io/en/latest/>
 
 ## Contributors
 
