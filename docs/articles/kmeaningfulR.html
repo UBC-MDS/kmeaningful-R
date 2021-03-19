@@ -76,39 +76,57 @@
 
     
     
+<div id="load-kmeaningfulr-library" class="section level2">
+<h2 class="hasAnchor">
+<a href="#load-kmeaningfulr-library" class="anchor"></a>Load <code>kmeaningfulR</code> library</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="co"># load library </span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/UBC-MDS/kmeaningfulR" class="external-link">kmeaningfulR</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/UBC-MDS/kmeaningfulR" class="external-link">kmeaningfulR</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'kmeaningfulR'</span>
 <span class="co">#&gt; The following object is masked from 'package:base':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     assign</span></code></pre></div>
+</div>
+<div id="example-array-with-6-rows-and-2-columns" class="section level1">
+<h1 class="hasAnchor">
+<a href="#example-array-with-6-rows-and-2-columns" class="anchor"></a>Example array with 6 rows and 2 columns</h1>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># helper data X</span>
-<span class="va">X</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, dim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># scale data</span>
-<span class="va">X_scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/preprocess.html">preprocess</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>
-
-<span class="co"># find optimal number of clusters</span>
-<span class="va">optimal_K</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/find_elbow.html">find_elbow</a></span><span class="op">(</span><span class="va">X_scaled</span><span class="op">)</span>
-
-<span class="co"># find location of cluster centers</span>
-<span class="va">centers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fit.html">fit</a></span><span class="op">(</span><span class="va">X_scaled</span>, <span class="va">optimal_K</span><span class="op">)</span>
-
-<span class="co"># assign label of nearest center to every point</span>
-<span class="va">labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/assign.html">assign</a></span><span class="op">(</span><span class="va">X_scaled</span>,<span class="va">centers</span><span class="op">)</span>
-
-<span class="co"># plot a 2D PCA visualisation of the points clusters</span>
-<span class="fu"><a href="../reference/show_clusters.html">show_clusters</a></span><span class="op">(</span><span class="va">X_scaled</span>, <span class="va">labels</span>, <span class="va">centers</span><span class="op">)</span></code></pre></div>
-<p><img src="kmeaningfulR_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<code class="sourceCode R"><span class="va">X</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, dim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="scale-data" class="section level1">
+<h1 class="hasAnchor">
+<a href="#scale-data" class="anchor"></a>Scale data</h1>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">X_scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/preprocess.html">preprocess</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="find-optimal-number-of-clusters" class="section level1">
+<h1 class="hasAnchor">
+<a href="#find-optimal-number-of-clusters" class="anchor"></a>Find optimal number of clusters</h1>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">optimal_K</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/find_elbow.html">find_elbow</a></span><span class="op">(</span><span class="va">X_scaled</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="find-cluster-centers-and-label-of-nearest-center-to-every-point" class="section level1">
+<h1 class="hasAnchor">
+<a href="#find-cluster-centers-and-label-of-nearest-center-to-every-point" class="anchor"></a>Find cluster centers and label of nearest center to every point</h1>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">assign_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fit_assign.html">fit_assign</a></span><span class="op">(</span><span class="va">X_scaled</span>, <span class="va">optimal_K</span><span class="op">)</span>
+<span class="va">centers</span> <span class="op">&lt;-</span> <span class="va">assign_list</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+<span class="va">labels</span> <span class="op">&lt;-</span> <span class="va">assign_list</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></code></pre></div>
+</div>
+<div id="plot-a-2d-pca-visualisation-of-the-points-clusters" class="section level1">
+<h1 class="hasAnchor">
+<a href="#plot-a-2d-pca-visualisation-of-the-points-clusters" class="anchor"></a>Plot a 2D PCA visualisation of the points clusters</h1>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/show_clusters.html">show_clusters</a></span><span class="op">(</span><span class="va">X_scaled</span>, <span class="va">labels</span>, <span class="va">centers</span><span class="op">)</span></code></pre></div>
+<p><img src="kmeaningfulR_files/figure-html/show_clusters-1.png" width="700"></p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
