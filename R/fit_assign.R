@@ -188,7 +188,7 @@ fit <- function(X, k){
   new_labels <- assign(X, centers)
 
   i <- 1
-  while(centers - new_centers && i < 30){
+  while(all((centers - new_centers)==0) && i < 30){
     centers <- new_centers
     labels <- new_labels
     new_labels <- assign(X, centers) # assign cluster label to closest center
@@ -200,11 +200,10 @@ fit <- function(X, k){
 
 #' Finds k clusters in data points and assigns each point to a cluster.
 #'
-#' @param X array Data points of dimension (n,d)
-#' @param k int The number of desired clusters
+#' @param X array: Data points of dimension (n,d)
+#' @param k int: The number of desired clusters
 #'
-#' @return list [1]: array of cluster centers, dimension(n,d)
-#'              [2]: array of cluster labels, dimension (n,1)
+#' @return list: array of cluster centers dimension(n,d), array of cluster labels dimension (n,1)
 #' @export
 #'
 #' @examples
