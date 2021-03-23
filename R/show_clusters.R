@@ -1,5 +1,4 @@
 library(FactoMineR)
-library(forcats)
 library(ggplot2)
 library(dplyr)
 

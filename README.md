@@ -45,8 +45,8 @@ implementation from scratch.
       - `fit(X, k)` - finds centroid location for all of the `k`
         clusters
       - `assign(X, centres)` - assigns each example to a cluster
-4.  `show_clusters(X, centres)` - Visualize clusters according to 2d PCA
-    representation
+4.  `show_clusters(X, labels, centres)` - Visualize clusters according
+    to 2d PCA representation
 
 ## Dependencies
 
@@ -79,7 +79,7 @@ optimal_K <- find_elbow(X_scaled)
 centers <- fit(X_scaled, optimal_K)
 
 # assign label of nearest center to every point
-labels <- assign(X_scaled,centers)
+labels <- assign(X_scaled, centers)
 
 # plot a 2D PCA visualisation of the points clusters
 show_clusters(X_scaled, labels, centers)
