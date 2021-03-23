@@ -67,7 +67,7 @@ library(kmeaningfulR)
 #>     assign
 
 # helper data X
-X  <- array(c(0, 1, 10, 10, 10, 10, 0, 1, 10, 11, 0, 1), dim = c(6,2))
+X <- array(c(0, 1, 10, 10, 10, 10, 0, 1, 10, 11, 0, 1), dim = c(6,2))
 
 # scale data
 X_scaled <- preprocess(X)
@@ -82,10 +82,10 @@ centers <- fit(X_scaled, optimal_K)
 labels <- assign(X_scaled,centers)
 
 # plot a 2D PCA visualisation of the points clusters
-# show_clusters(X_scaled, labels, centers)
+show_clusters(X_scaled, labels, centers)
 ```
 
-![](https://ubc-mds.github.io/kmeaningfulR/articles/kmeaningfulR_files/figure-html/unnamed-chunk-2-1.png)
+<img src="man/figures/README-usage-example-1.png" width="100%" />
 
 | Task                               | Function                    |
 | ---------------------------------- | --------------------------- |
@@ -97,7 +97,8 @@ labels <- assign(X_scaled,centers)
 
 ## Documentation
 
-The official documentation is hosted here: https://ubc-mds.github.io/kmeaningfulR/
+The official documentation is hosted on Read the Docs:
+<https://kmeaningfulR.readthedocs.io/en/latest/>
 
 ## Contributors
 
