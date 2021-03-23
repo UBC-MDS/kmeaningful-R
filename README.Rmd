@@ -59,7 +59,7 @@ There already exist several packages that implement k-means clustering in R. Mos
 library(kmeaningfulR)
 
 # helper data X
-X  <- array(c(0, 1, 10, 10, 10, 10, 0, 1, 10, 11, 0, 1), dim = c(6,2))
+X <- array(c(0, 1, 10, 10, 10, 10, 0, 1, 10, 11, 0, 1), dim = c(6,2))
 
 # scale data
 X_scaled <- preprocess(X)
