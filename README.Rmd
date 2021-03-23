@@ -43,7 +43,7 @@ There already exist several packages that implement k-means clustering in R. Mos
 3. `fit_assign(X, k)` - Wrapper function that calls `fit(X, k)` and `assign(X, centres)`
     - `fit(X, k)` - finds centroid location for all of the `k` clusters
     - `assign(X, centres)` - assigns each example to a cluster
-4. `show_clusters(X, centres)` - Visualize clusters according to 2d PCA representation
+4. `show_clusters(X, labels, centres)` - Visualize clusters according to 2d PCA representation
 
 ## Dependencies
 
